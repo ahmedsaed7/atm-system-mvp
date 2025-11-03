@@ -24,3 +24,8 @@ MVP for an ATM system with an admin dashboard using Node.js, Express, and MongoD
 
 - RESTful endpoints مع JWT protection.
 - Email notifications on balance changes.
+## Sequence Diagram: Withdrawal Flow (with Email)
+
+<image-card alt="Sequence Withdraw" src="diagrams/sequence-withdraw-diagram.png" ></image-card>
+
+- يشمل تحقق JWT، DB transaction، وإرسال email.
