@@ -1,31 +1,31 @@
-# atm-system-mvp
-MVP for an ATM system with an admin dashboard using Node.js, Express, and MongoDB. Supports core operations like balance inquiry, withdrawal (max 1000 units), deposit, and PIN change, with JWT-based authentication and transaction logging
+# ATM System MVP
+
+MVP for an ATM system with an admin dashboard using Node.js, Express, and MongoDB. Supports core operations like balance inquiry, withdrawal (max 1000 units), deposit, and PIN change, with JWT-based authentication and transaction logging.
 
 ## User Stories Diagram
 
-<image-card alt="User Stories" src="diagrams/user-stories-diagram.png" ></image-card>
+![User Stories](diagrams/user-stories-diagram.png)
 
 ## Database Design (ER Diagram)
 
-<image-card alt="ER Diagram" src="diagrams/er-diagram.png" ></image-card>
+![ER Diagram](diagrams/er-diagram.png)
 
 - Users: حسابات مع رصيد ودور.
 - Transactions: سجل المعاملات مرتبط بـ User.
 
-
 ## Updated ER Diagram (with Email Notifications)
 
-<image-card alt="ER with Email" src="diagrams/er-diagram-with-email.png" ></image-card>
-
+![ER with Email](diagrams/er-diagram-with-email.png)
 
 ## API Flow Diagram
 
-<image-card alt="API Flow" src="diagrams/api-flow-diagram.png" ></image-card>
+![API Flow](diagrams/api-flow-diagram.png)
 
 - RESTful endpoints مع JWT protection.
 - Email notifications on balance changes.
+
 ## Sequence Diagram: Withdrawal Flow (with Email)
 
-<image-card alt="Sequence Withdraw" src="diagrams/sequence-withdraw-diagram.png" ></image-card>
+![Sequence Withdraw](diagrams/sequence-withdraw-diagram.png)
 
 - يشمل تحقق JWT، DB transaction، وإرسال email.
