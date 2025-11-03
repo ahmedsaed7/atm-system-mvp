@@ -38,6 +38,7 @@
 - Database: MongoDB + Mongoose.
 - أمان: JWT (توثيق)، bcrypt (هاش PIN).
 - أخرى: dotenv (.env)، cors، helmet.
+- إشعارات: Nodemailer لإرسال emails عند تغيير الرصيد.
 
 ## User Stories
 
