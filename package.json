@@ -4,8 +4,10 @@
   "description": "MVP for an ATM system with an admin dashboard using Node.js, Express, and MongoDB. Supports core operations like balance inquiry, withdrawal (max 1000 units), deposit, and PIN change, with JWT-based authentication and transaction logging.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "nodemon app.js",
+  "dev": "nodemon app.js",
+  "test": "jest"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
