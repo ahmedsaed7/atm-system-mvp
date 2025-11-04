@@ -87,8 +87,22 @@ const userSchema = new mongoose.Schema({
             },
             message: 'Daily limit must be a positive number'
         }
+    },
+    transactions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Transaction'
+    }],
+    age: {
+        type: Number,
+        default: 18,
+        min: 18,
+        max: 65,
+        validate(value) {
+            if (value <= 0) {
+                throw new Error('Age must be a positive number');
+            }
+        }
     }
-
 }, { timestamps: true });
 
 // Hash PIN before saving
@@ -123,6 +137,15 @@ userSchema.statics.findByCredentials = async function (accountNumber, pin) {
     }
     return user;
 }
+
+//Virtual Relations
+userSchema.virtual('transactions', {
+    ref: 'Transaction', 
+    localField: '_id', // حقل في User (ID)
+    foreignField: 'userId', // حقل في Transaction
+    options: { sort: { createdAt: -1 } } // الأحدث أولًا
+});
+
 
 /**
  * لكود ده فهرسة (indexing): هو بيبني "مؤشر" على الحقول cardNumber و email بس، علشان يسرّع البحث (queries) في قاعدة البيانات. مش بيأثر على الإدخال (input) أو الاستعلامات مباشرة – هو مجرد تحسين أداء.
